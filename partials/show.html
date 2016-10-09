@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <a href="/#/searchresults" ng-click="searchByTitle()">
+      <img id="arrow" alt="" src="/asset/arrow.png">
+    </a>
+
+    <div class="container" id="poster">
+      <div class="movie-poster left">
+        <img class="movie-poster" src="/asset/movie_poster.jpg">
+      </div>
+
+      <div class="text right">
+        <p class="title" >{{movieinfo.Title}}</p>
+        <p> <strong> Released on </strong>{{movieinfo.Released}} ({{movieinfo.Country}} ) </p>
+        <p class="plot">{{movieinfo.Plot}}</p>
+        <div style="height: 2em;"><p class="movie-info left"> Director: </p> <p class="attributes"> {{movieinfo.Director}} </p></div>
+        <div style="height: 2em;"><p class= "movie-info left">Actor: </p> <p class="attributes"> {{movieinfo.Actors}} </p></div>
+        <div style="height: 2em;"><p class= "movie-info left">Genre: </p> <p class="attributes"> {{movieinfo.Genre}} </p></div>
+
+        <h2> Ratings </h2>
+        <p> IMDb: 
+
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating >= 0.8" class="star" src="/asset/yellowstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating > 0.2 && movieinfo.imdbRating < 0.8" class="star" src="/asset/halfstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating <=0.2" class="star" src="/asset/greystar.png">
+
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating >= 1.8" class="star" src="/asset/yellowstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating > 1.2 && movieinfo.imdbRating < 1.8" class="star" src="/asset/halfstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating <=1.2" class="star" src="/asset/greystar.png">
+
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating >= 2.8" class="star" src="/asset/yellowstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating > 2.2 && movieinfo.imdbRating < 2.8" class="star" src="/asset/halfstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating <=2.2" class="star" src="/asset/greystar.png">
+
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating >= 3.8" class="star" src="/asset/yellowstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating > 3.2 && movieinfo.imdbRating < 3.8" class="star" src="/asset/halfstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating <=3.2" class="star" src="/asset/greystar.png">
+
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating >= 4.8" class="star" src="/asset/yellowstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating > 4.2 && movieinfo.imdbRating < 4.8" class="star" src="/asset/halfstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating <=4.2" class="star" src="/asset/greystar.png">
+
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating >= 5.8" class="star" src="/asset/yellowstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating > 5.2 && movieinfo.imdbRating < 5.8" class="star" src="/asset/halfstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating <=5.2" class="star" src="/asset/greystar.png">
+
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating >= 6.8" class="star" src="/asset/yellowstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating > 6.2 && movieinfo.imdbRating < 6.8" class="star" src="/asset/halfstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating <=6.2" class="star" src="/asset/greystar.png">
+
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating >= 7.8" class="star" src="/asset/yellowstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating > 7.2 && movieinfo.imdbRating < 7.8" class="star" src="/asset/halfstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating <=7.2" class="star" src="/asset/greystar.png">
+
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating >= 8.8" class="star" src="/asset/yellowstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating > 8.2 && movieinfo.imdbRating < 8.8" class="star" src="/asset/halfstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating <=8.2" class="star" src="/asset/greystar.png">
+
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating >= 9.8" class="star" src="/asset/yellowstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating > 9.2 && movieinfo.imdbRating < 9.8" class="star" src="/asset/halfstar.png">
+<img class="icon" alt="star1" ng-if="movieinfo.imdbRating <=9.2" class="star" src="/asset/greystar.png">
+
+     <strong>{{movieinfo.imdbRating}} </strong>/10 </p>   
+
+
+<p> Rotten Tomatoes: <img class="icon" ng-if="movieinfo.tomatoRating > 7" alt="tomato" src="/asset/great_tomato.png">
+<img class="icon" ng-if="movieinfo.tomatoRating < 6" alt="tomato" src="/asset/rotten_tomato.png">
+<img class="icon" ng-if="movieinfo.tomatoRating >= 6 && movieinfo.tomatoRating <= 7" alt="tomato" src="/asset/fresh_tomato.png"> {{movieinfo.tomatoRating*10}} %</p>
+    
+  
+
+        <h2> Additional information </h2>
+        <p>Rated: {{movieinfo.Rated}}</p>
+        <p>Awards: {{movieinfo.Awards}}</p>
+        <p>Writer: {{movieinfo.Writer}}</p>
+        <p>Runtime: {{movieinfo.Runtime}}</p>
+        <p>Language: {{movieinfo.Language}}</p>
+      </div>
+    </div>
+
+
+  </body>
+</html>

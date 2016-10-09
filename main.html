@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+  <head>
+    <meta charset="utf-8">
+    <title>Movie Search</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+  </head>
+  <body ng-cloak ng-controller="MainController" ng-animate-children="true">
+    <main>
+      <div class="search-bar" id="search-bar">
+        <img id="m" alt="" src="/asset/M.png" onclick="gotohomepage()"> 
+        <form id="searchform" ng-submit="searchByTitle()" onSubmit="animation1(); goto();">
+          <input id="search" type="text" ng-model="searchterm" placeholder="Search Movie...">
+          <a class="fa fa-search searchicon button" href="/#/searchresults" ng-click="searchByTitle()" onClick="animation1()">
+          </a>
+        </form>
+      </div>
+      <h1 class="logo">ovie Search</h1>
+      <div class="page {{ pageClass }}" ng-view></div>
+
+    </main>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
